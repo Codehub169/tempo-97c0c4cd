@@ -29,28 +29,28 @@
           "it": [
             {
               "ty": "rc",
-              "s": {"a":0,"k":[80,200],"ix":2}, /* Rectangle for vertical bar of H */
+              "s": {"a":0,"k":[80,200],"ix":2},
               "p": {"a":0,"k":[-50,0],"ix":3},
               "r": {"a":0,"k":10,"ix":4},
               "nm": "Vertical Bar 1"
             },
             {
               "ty": "rc",
-              "s": {"a":0,"k":[80,200],"ix":2}, /* Rectangle for vertical bar of H */
+              "s": {"a":0,"k":[80,200],"ix":2},
               "p": {"a":0,"k":[50,0],"ix":3},
               "r": {"a":0,"k":10,"ix":4},
               "nm": "Vertical Bar 2"
             },
             {
               "ty": "rc",
-              "s": {"a":0,"k":[120,40],"ix":2}, /* Rectangle for horizontal bar of H */
+              "s": {"a":0,"k":[120,40],"ix":2},
               "p": {"a":0,"k":[0,0],"ix":3},
               "r": {"a":0,"k":10,"ix":4},
               "nm": "Horizontal Bar"
             },
             {
               "ty": "fill",
-              "c": {"a":0,"k":[0.639,0.698,0.541,1],"ix":4}, /* #A3B18A hueneu-primary */
+              "c": {"a":0,"k":[0.639,0.698,0.541,1],"ix":4},
               "o": {"a":0,"k":100,"ix":5},
               "r": 1,
               "nm": "Fill"
