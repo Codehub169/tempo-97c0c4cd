@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/DMSans-Regular.woff2) format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/fonts/PlayfairDisplay-Bold.woff2) format('woff2');
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-hueneu-secondary text-hueneu-neutral-dark font-sans;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+  }
+
+  /* Custom selection color */
+  ::selection {
+    @apply bg-hueneu-accent text-hueneu-secondary;
+  }
+  ::-moz-selection { /* Code for Firefox */
+    @apply bg-hueneu-accent text-hueneu-secondary;
+  }
+
+  /* Headings default to display font, can be overridden by utilities */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .section-padding {
+    @apply px-6 py-16 md:px-12 md:py-24 lg:px-24 lg:py-32;
+  }
+  .content-max-width {
+    @apply max-w-5xl mx-auto;
+  }
+}
