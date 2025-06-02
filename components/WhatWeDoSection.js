@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import ServiceItem from './ServiceItem'; // Assuming ServiceItem will be created
+import ServiceItem from './ServiceItem';
 
 const services = [
   { 
@@ -30,7 +30,7 @@ const services = [
   { 
     icon: '/icons/icon-creative-projects.svg', 
     title: 'Creative Projects',
-    description: 'Unique collaborations for those “what if” ideas.'
+    description: 'Unique collaborations for those “what if” ideas.' // Corrected typo: \televen removed
   },
 ];
 
@@ -46,7 +46,7 @@ const WhatWeDoSection = () => {
   return (
     <motion.section
       id="services"
-      className="min-h-screen py-20 px-6 md:px-12 lg:px-24 bg-primary text-secondary flex flex-col items-center justify-center"
+      className="min-h-screen py-20 px-6 md:px-12 lg:px-24 bg-hueneu-green text-hueneu-light-neutral flex flex-col items-center justify-center"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
@@ -63,12 +63,13 @@ const WhatWeDoSection = () => {
       </motion.h2>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 w-full max-w-5xl">
-        {services.map((service, index) => (
+        {services.map((service) => ( // Removed index from map, key uses service.title
           <ServiceItem 
-            key={index} 
+            key={service.title} // Using service.title for a more stable key
             icon={service.icon} 
             title={service.title} 
             description={service.description} 
+            // index prop removed, parent staggerChildren will handle delay
           />
         ))}
       </div>

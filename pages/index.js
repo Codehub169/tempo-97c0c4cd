@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Meta />
-      <div className="bg-secondary text-neutral-dark font-sans antialiased overflow-x-hidden">
+      <div className="bg-hueneu-light-neutral text-hueneu-neutral-dark font-sans antialiased overflow-x-hidden">
         <HeroSection />
         <HueneuStorySection />
         <WhatWeDoSection />
@@ -18,12 +18,12 @@ export default function Home() {
         <ContactSection />
 
         {/* Footer - can be a simple div or a new component */}
-        <footer className="bg-primary text-secondary py-12 text-center">
+        <footer className="bg-hueneu-green text-hueneu-light-neutral py-12 text-center">
           <p className="text-sm">
             &copy; {new Date().getFullYear()} hueneu. All rights reserved.
           </p>
           <p className="text-sm mt-2">
-            <a href="https://www.instagram.com/hueneu_/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+            <a href="https://www.instagram.com/hueneu_/" target="_blank" rel="noopener noreferrer" className="hover:text-hueneu-warm-accent transition-colors">
               @hueneu_
             </a>
           </p>

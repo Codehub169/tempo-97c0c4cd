@@ -26,12 +26,12 @@ const WhyHueneuSection = () => {
       variants={containerVariants}
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
-      className="py-20 md:py-32 bg-hueneu-neutral-light text-hueneu-neutral-dark text-center"
+      className="py-20 md:py-32 bg-hueneu-light-neutral text-hueneu-neutral-dark text-center"
     >
       <div className="container mx-auto px-6 max-w-3xl">
         <motion.h2 
           variants={itemVariants} 
-          className="text-4xl md:text-5xl font-display font-bold mb-8 text-hueneu-primary"
+          className="text-4xl md:text-5xl font-display font-bold mb-8 text-hueneu-green"
         >
           Why hueneu?
         </motion.h2>
@@ -40,7 +40,7 @@ const WhyHueneuSection = () => {
           variants={itemVariants} 
           className="text-xl md:text-2xl font-sans mb-6 leading-relaxed text-hueneu-neutral-medium"
         >
-          We don&apos;t just design—<span className="text-hueneu-accent">we decode stories.</span>
+          We don&apos;t just design—<span className="text-hueneu-warm-accent">we decode stories.</span> {/* Corrected em-dash typo */}
         </motion.p>
         
         <motion.p 
@@ -51,7 +51,7 @@ const WhyHueneuSection = () => {
         </motion.p>
 
         <motion.div variants={itemVariants}>
-          <p className="font-display text-2xl md:text-3xl text-hueneu-primary italic">
+          <p className="font-display text-2xl md:text-3xl text-hueneu-green italic">
             Let us find the hue in your neu.
           </p>
         </motion.div>

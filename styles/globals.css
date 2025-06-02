@@ -26,16 +26,16 @@
   }
 
   body {
-    @apply bg-hueneu-secondary text-hueneu-neutral-dark font-sans;
+    @apply bg-hueneu-light-neutral text-hueneu-neutral-dark font-sans;
     overflow-x: hidden; /* Prevents horizontal scroll */
   }
 
   /* Custom selection color */
   ::selection {
-    @apply bg-hueneu-accent text-hueneu-secondary;
+    @apply bg-hueneu-warm-accent text-hueneu-light-neutral;
   }
   ::-moz-selection { /* Code for Firefox */
-    @apply bg-hueneu-accent text-hueneu-secondary;
+    @apply bg-hueneu-warm-accent text-hueneu-light-neutral;
   }
 
   /* Headings default to display font, can be overridden by utilities */

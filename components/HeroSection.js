@@ -22,9 +22,9 @@ const HeroSection = () => {
   return (
     <section 
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center bg-secondary text-neutral-dark p-8 relative overflow-hidden"
+      className="min-h-screen flex flex-col items-center justify-center bg-hueneu-light-neutral text-hueneu-neutral-dark p-8 relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-primary opacity-10 z-0"></div> 
+      <div className="absolute inset-0 bg-hueneu-green opacity-10 z-0"></div> 
       {/* Subtle background pattern or texture if desired - kept simple for now */}
 
       <motion.div 
@@ -38,7 +38,7 @@ const HeroSection = () => {
         </div>
         
         <motion.h1 
-          className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-4"
+          className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-hueneu-green mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -47,7 +47,7 @@ const HeroSection = () => {
         </motion.h1>
 
         <motion.p 
-          className="font-display text-xl sm:text-2xl md:text-3xl text-accent mb-2"
+          className="font-display text-xl sm:text-2xl md:text-3xl text-hueneu-warm-accent mb-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
@@ -56,7 +56,7 @@ const HeroSection = () => {
         </motion.p>
 
         <motion.p 
-          className="text-md sm:text-lg md:text-xl text-neutral-dark max-w-md mx-auto"
+          className="text-md sm:text-lg md:text-xl text-hueneu-neutral-dark max-w-md mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.1 }}

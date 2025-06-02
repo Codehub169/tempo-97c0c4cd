@@ -11,6 +11,7 @@ const ContactSection = () => {
     message: '',
   });
   const [status, setStatus] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,6 +19,7 @@ const ContactSection = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
     setStatus('Sending...');
     try {
       const response = await fetch('/api/contact', {
@@ -28,15 +30,17 @@ const ContactSection = () => {
         body: JSON.stringify(formData),
       });
       if (response.ok) {
-        setStatus('Message sent! We\'ll be in touch.');
+        setStatus("Message sent! We'll be in touch.");
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
         const errorData = await response.json();
         setStatus(errorData.message || 'Something went wrong. Please try again.');
       }
     } catch (error) {
+      console.error('Contact form submission error:', error);
       setStatus('An error occurred. Please try again.');
     }
+    setIsSubmitting(false);
   };
 
   const [ref, inView] = useInView({
@@ -49,7 +53,7 @@ const ContactSection = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
   };
   
-  const inputClass = "w-full p-3 bg-hueneu-neutral-light border border-hueneu-primary/30 rounded-md focus:ring-2 focus:ring-hueneu-accent focus:border-hueneu-accent outline-none placeholder-hueneu-neutral-medium/70 text-hueneu-neutral-dark transition-colors duration-300 font-sans";
+  const inputClass = "w-full p-3 bg-hueneu-light-neutral border border-hueneu-green/30 rounded-md focus:ring-2 focus:ring-hueneu-warm-accent focus:border-hueneu-warm-accent outline-none placeholder-hueneu-neutral-medium/70 text-hueneu-neutral-dark transition-colors duration-300 font-sans";
 
   return (
     <motion.section
@@ -58,18 +62,18 @@ const ContactSection = () => {
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       id="contact"
-      className="py-20 md:py-32 bg-hueneu-primary"
+      className="py-20 md:py-32 bg-hueneu-green"
     >
       <div className="container mx-auto px-6 max-w-2xl">
         <motion.h2 
           variants={{ hidden: { opacity: 0, y:20 }, visible: { opacity:1, y:0, transition: {delay: 0.2, duration: 0.5}}}}
-          className="text-4xl md:text-5xl font-display font-bold text-center mb-6 text-hueneu-secondary"
+          className="text-4xl md:text-5xl font-display font-bold text-center mb-6 text-hueneu-light-neutral"
         >
           Let&apos;s Work Together
         </motion.h2>
         <motion.p 
           variants={{ hidden: { opacity: 0, y:20 }, visible: { opacity:1, y:0, transition: {delay: 0.4, duration: 0.5}}}}
-          className="text-center text-lg text-hueneu-secondary/90 mb-12 font-sans"
+          className="text-center text-lg text-hueneu-light-neutral/90 mb-12 font-sans"
         >
           Have a story to tell or a project in mind? Drop us a line.
         </motion.p>
@@ -77,32 +81,33 @@ const ContactSection = () => {
         <motion.form 
           variants={{ hidden: { opacity: 0, scale:0.95 }, visible: { opacity:1, scale:1, transition: {delay: 0.6, duration: 0.5}}}}
           onSubmit={handleSubmit} 
-          className="bg-hueneu-secondary p-8 md:p-12 rounded-lg shadow-xl space-y-6 transform transition-all duration-500 hover:scale-[1.01]"
+          className="bg-hueneu-light-neutral p-8 md:p-12 rounded-lg shadow-xl space-y-6 transform transition-all duration-500 hover:scale-[1.01]"
         >
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-hueneu-neutral-dark mb-1 font-sans">Your Name</label>
-            <input type="text" name="name" id="name" value={formData.name} onChange={handleChange} required className={inputClass} placeholder="What should we call you?" />
+            <input type="text" name="name" id="name" value={formData.name} onChange={handleChange} required className={inputClass} placeholder="What should we call you?" disabled={isSubmitting} />
           </div>
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-hueneu-neutral-dark mb-1 font-sans">Your Email</label>
-            <input type="email" name="email" id="email" value={formData.email} onChange={handleChange} required className={inputClass} placeholder="Where can we reach you?" />
+            <input type="email" name="email" id="email" value={formData.email} onChange={handleChange} required className={inputClass} placeholder="Where can we reach you?" disabled={isSubmitting} />
           </div>
           <div>
             <label htmlFor="subject" className="block text-sm font-medium text-hueneu-neutral-dark mb-1 font-sans">Subject</label>
-            <input type="text" name="subject" id="subject" value={formData.subject} onChange={handleChange} required className={inputClass} placeholder="A brief idea of your story" />
+            <input type="text" name="subject" id="subject" value={formData.subject} onChange={handleChange} required className={inputClass} placeholder="A brief idea of your story" disabled={isSubmitting} />
           </div>
           <div>
             <label htmlFor="message" className="block text-sm font-medium text-hueneu-neutral-dark mb-1 font-sans">Your Message</label>
-            <textarea name="message" id="message" value={formData.message} onChange={handleChange} rows="5" required className={`${inputClass} min-h-[120px]`} placeholder="Tell us more about your project or idea..."></textarea>
+            <textarea name="message" id="message" value={formData.message} onChange={handleChange} rows="5" required className={`${inputClass} min-h-[120px]`} placeholder="Tell us more about your project or idea..." disabled={isSubmitting}></textarea>
           </div>
           <motion.button
             type="submit"
-            whileHover={{ scale: 1.05, backgroundColor: '#C08A5F' /* Darker Accent from plan: #D4A373 */ }}
-            whileTap={{ scale: 0.95 }}
-            className="w-full bg-hueneu-accent text-white font-bold py-3 px-6 rounded-md flex items-center justify-center space-x-2 transition-colors duration-300 text-lg hover:shadow-lg font-sans"
+            whileHover={!isSubmitting ? { scale: 1.05, backgroundColor: '#C08A5F' } : {}}
+            whileTap={!isSubmitting ? { scale: 0.95 } : {}}
+            className="w-full bg-hueneu-warm-accent text-white font-bold py-3 px-6 rounded-md flex items-center justify-center space-x-2 transition-colors duration-300 text-lg hover:shadow-lg font-sans disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={isSubmitting}
           >
             <FiSend />
-            <span>Let&apos;s Design Your Story</span>
+            <span>{isSubmitting ? 'Sending...' : "Let's Design Your Story"}</span>
           </motion.button>
         </motion.form>
 
@@ -116,12 +121,12 @@ const ContactSection = () => {
           variants={{ hidden: { opacity: 0 }, visible: { opacity:1, transition: {delay: 0.8, duration: 0.5}}}}
           className="text-center mt-12"
         >
-          <p className="text-hueneu-secondary/80 mb-2 font-sans">Connect with us on Instagram:</p>
+          <p className="text-hueneu-light-neutral/80 mb-2 font-sans">Connect with us on Instagram:</p>
           <a 
             href="https://instagram.com/hueneu_" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="inline-flex items-center text-hueneu-accent hover:text-white font-display text-xl transition-colors duration-300 group"
+            className="inline-flex items-center text-hueneu-warm-accent hover:text-white font-display text-xl transition-colors duration-300 group"
           >
             <FiInstagram className="mr-2 group-hover:scale-110 transition-transform"/> @hueneu_
           </a>

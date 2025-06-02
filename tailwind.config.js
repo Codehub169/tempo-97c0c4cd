@@ -14,6 +14,9 @@ module.exports = {
           cream: '#FEFAE0',
           'dark-green': '#588157',
           'deep-green': '#3A5A40',
+          'neutral-medium': '#888888', // Added for consistency
+          'neutral-dark': '#588157',   // Value from 'dark-green'
+          'neutral-darkest': '#3A5A40', // Value from 'deep-green'
         },
         status: {
           success: '#84A98C',

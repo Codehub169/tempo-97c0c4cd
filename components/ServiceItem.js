@@ -1,14 +1,15 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-const ServiceItem = ({ icon, title, description, index }) => {
+// Removed index from props as parent's staggerChildren handles delay
+const ServiceItem = ({ icon, title, description }) => {
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        delay: index * 0.2,
+        // delay: index * 0.2, // Removed: Parent's staggerChildren manages this
         duration: 0.5,
         ease: 'easeOut'
       }
@@ -18,9 +19,8 @@ const ServiceItem = ({ icon, title, description, index }) => {
   return (
     <motion.div
       variants={itemVariants}
-      // initial="hidden" // Managed by parent WhatWeDoSection
-      // animate="visible" // Managed by parent WhatWeDoSection
-      className="bg-hueneu-secondary p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center h-full"
+      // initial and animate props are inherited from the parent motion component
+      className="bg-hueneu-light-neutral p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center h-full"
     >
       <div className="relative w-16 h-16 mb-4">
         <Image src={icon} alt={`${title} icon`} layout="fill" objectFit="contain" />
