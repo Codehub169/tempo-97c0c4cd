@@ -4,11 +4,11 @@
 
 @layer base {
   @font-face {
-    font-family: 'DM Sans';
+    font-family: 'Montserrat'; /* Updated from DM Sans */
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url(/fonts/DMSans-Regular.woff2) format('woff2');
+    src: url(/fonts/Montserrat-Regular.woff2) format('woff2'); /* Updated path */
   }
 
   @font-face {

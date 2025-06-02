@@ -11,7 +11,7 @@ class MyDocument extends Document {
           {/* Preload self-hosted fonts */}
           <link
             rel="preload"
-            href="/fonts/DMSans-Regular.woff2"
+            href="/fonts/Montserrat-Regular.woff2" /* Updated from DMSans-Regular.woff2 */
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
@@ -36,7 +36,7 @@ class MyDocument extends Document {
           <link rel="manifest" href="/site.webmanifest" />
           
           {/* Theme color for browser UI */}
-          <meta name="theme-color" content="#A3B18A" /> {/* hueneu-primary from tailwind.config.js */}
+          <meta name="theme-color" content="#A3B18A" /> {/* Matches hueneu.green (Primary color) from tailwind.config.js */}
         </Head>
         <body>
           <Main />
