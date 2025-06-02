@@ -1,0 +1,6 @@
+<svg width="200" height="150" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="150" fill="#FEFAE0"/>
+  <circle cx="70" cy="75" r="30" fill="#D4A373"/>
+  <path d="M 100 50 Q 120 75 100 100 Q 130 75 100 50 Z" fill="#A3B18A"/>
+  <text x="10" y="130" font-family="DM Sans, sans-serif" font-size="14" fill="#3A5A40">Placeholder Visual</text>
+</svg>
