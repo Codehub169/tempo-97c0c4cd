@@ -18,7 +18,7 @@ export default function Home() {
         <ContactSection />
 
         {/* Footer - can be a simple div or a new component */}
-        <footer className="bg-hueneu-green text-hueneu-light-neutral py-12 text-center">
+        <footer className="bg-hueneu-soft-blue text-hueneu-light-neutral py-12 text-center">
           <p className="text-sm">
             &copy; {new Date().getFullYear()} hueneu. All rights reserved.
           </p>

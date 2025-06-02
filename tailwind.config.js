@@ -17,6 +17,7 @@ module.exports = {
           'neutral-medium': '#888888', // Added for consistency
           'neutral-dark': '#588157',   // Value from 'dark-green'
           'neutral-darkest': '#3A5A40', // Value from 'deep-green'
+          'soft-blue': '#8DA9C4', // Added new blue color
         },
         status: {
           success: '#84A98C',
