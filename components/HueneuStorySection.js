@@ -29,25 +29,26 @@ const HueneuStorySection = () => {
   return (
     <motion.section
       id="story"
-      className="min-h-screen py-20 px-6 md:px-12 lg:px-24 bg-secondary flex flex-col items-center justify-center text-center"
+      className="min-h-screen py-20 px-6 md:px-12 lg:px-24 bg-hueneu-secondary flex flex-col items-center justify-center text-center"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
       <motion.h2 
-        className="text-4xl md:text-5xl font-display text-primary mb-8"
+        className="text-4xl md:text-5xl font-display text-hueneu-primary mb-8"
         variants={itemVariants}
       >
         The hueneu Story
       </motion.h2>
       
-      <motion.div className="max-w-3xl space-y-8 text-neutral-darkest leading-relaxed text-lg md:text-xl">
+      <motion.div className="max-w-3xl space-y-8 text-hueneu-neutral-darkest leading-relaxed text-lg md:text-xl">
         <motion.p variants={itemVariants}>
-          At hueneu, we believe in the quiet power of story. <span className="font-bold text-accent">Hue</span> represents the vibrant bursts of creativity, the unexpected color that brings a narrative to life. <span className="font-bold text-primary">Neu</span> embodies the grounding neutrality, the calm space where ideas take root and breathe.
+          At hueneu, we believe in the quiet power of story. <span className="font-bold text-hueneu-accent">Hue</span> represents the vibrant bursts of creativity, the unexpected color that brings a narrative to life. <span className="font-bold text-hueneu-primary">Neu</span> embodies the grounding neutrality, the calm space where ideas take root and breathe.
         </motion.p>
         <motion.p variants={itemVariants}>
-          It's a delicate balance – the art of being <strong className='font-semibold'>quiet but bold</strong>, <strong className='font-semibold'>calm yet playful</strong>. We craft designs that whisper, yet resonate deeply, creating experiences that feel both familiar and wonderfully new.
+          It&apos;s a delicate balance 
+dash the art of being <strong className="font-semibold">quiet but bold</strong>, <strong className="font-semibold">calm yet playful</strong>. We craft designs that whisper, yet resonate deeply, creating experiences that feel both familiar and wonderfully new.
         </motion.p>
       </motion.div>
 
@@ -69,12 +70,12 @@ const HueneuStorySection = () => {
             height={150} 
             className="object-contain"
           />
-          <span className="absolute -bottom-4 -right-4 bg-accent text-white text-sm font-bold py-1 px-3 rounded-full shadow-md transform rotate-6">
+          <span className="absolute -bottom-4 -right-4 bg-hueneu-accent text-white text-sm font-bold py-1 px-3 rounded-full shadow-md transform rotate-6">
             Who Knew?
           </span>
         </motion.div>
         <motion.p 
-          className="mt-6 text-neutral-dark text-md md:text-lg italic"
+          className="mt-6 text-hueneu-neutral-dark text-md md:text-lg italic"
           variants={itemVariants}
         >
           ...that quiet could be so captivating?
